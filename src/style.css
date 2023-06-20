@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+
+:root {
+  --primary: #575150;
+  --sec: #f0ede9;
+  --thr: #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  background-color: var(--primary);
+  color: var(--sec);
+}
+
+.btn {
+  color: var(--primary);
+  background-color: var(--thr);
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid var(--primary);
+  border-radius: 2.5px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  filter: drop-shadow(2px 3px 0 var(--sec));
+  transform: translateY(-1px);
+}
+
+main {
+  margin: 5% 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  align-items: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  padding-left: 191px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 40px;
+  min-width: 280px;
+}
+
+.head {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container,
+.form {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.scores {
+  border: 1px solid var(--sec);
+  border-radius: 2.5px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.scores::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+.scores::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(19, 19, 19, 0.3);
+}
+
+.scores::-webkit-scrollbar-thumb {
+  background-color: var(--thr);
+}
+
+.scores-list {
+  width: 100%;
+  color: red;
+}
+
+.scores-list td {
+  padding: 5px;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(249 224 187 / 43%);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 5px;
+  outline: var(--thr);
+  background: var(--sec);
+  border: 1px solid var(--sec);
+  border-radius: 2.5px;
+}
+
+input::placeholder {
+  color: var(--primary);
+}
+
+button {
+  align-self: flex-end;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 5% 10%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    min-width: 780px;
+    margin-top: 22px;
+  }
+
+  h1 {
+    align-self: start;
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .form {
+    align-self: start;
+  }
+}
