@@ -5,29 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leaderboard</title>
-  <script defer src="index.bundle.js"></script></head>
+    <script defer src="index.bundle.js"></script>
+  </head>
 
   <body>
     <main>
-      <h1>leaderboard</h1>
-      <section class="section">
-        <div class="container">
-          <div class="head">
+      <section class="cover">
+        <h1>leaderboard</h1>
+        <div class="section">
+          <div class="container">
             <h3>Recent score</h3>
-            <button type="button" class="btn">Refresh</button>
+            <button type="button" class="btn" id="refBtn">Refresh</button>
           </div>
           <div class="scores">
             <table class="scores-list"></table>
           </div>
         </div>
         <div class="form">
-          <div class="head">
-            <h3>add your Score</h3>
+          <div class="container">
+            <h3>Add your score</h3>
           </div>
           <form>
-            <input type="text" placeholder="name" />
-            <input type="number" placeholder="number" />
-            <button type="submit" class="btn">submit</button>
+            <input type="text" placeholder="Your name" id="player" required />
+            <input type="number" placeholder="Your score" id="score" required />
+            <button type="button" class="btn" id="submit">submit</button>
           </form>
         </div>
       </section>

@@ -1,15 +1,37 @@
 import './style.css';
-import people from './modules/players.js';
+import { createScore, getScore } from './modules/apiOperations.js';
+import Board from './modules/leadrBoard.js';
 
-const playersScores = document.querySelector('.scores-list');
+const submit = document.getElementById('submit');
 
-playersScores.innerHTML = people
-  .map(
-    (player) => `
-    <tr>
-      <td>${player.name}</td>
-      <td>${player.score}</td>
-    </tr>
-  `,
-  )
-  .join('');
+submit.addEventListener('click', (e) => {
+  e.preventDefault();
+  const player = document.getElementById('player');
+  const score = document.getElementById('score');
+
+  createScore(player.value, score.value);
+  player.value = '';
+  score.value = '';
+});
+
+const players = new Board();
+const print = () => {
+  const result = getScore();
+  result.then((res) => {
+    players.data = res.result;
+    const playersScores = document.querySelector('.scores-list');
+
+    // sorted the array descending order
+    const sortedScores = players.data.sort((a, b) => b.score - a.score);
+
+    playersScores.innerHTML = sortedScores.map((player) => `<tr><td>${player.user}: ${player.score}</td></tr>`).join('');
+  });
+};
+
+const refreshButton = document.getElementById('refBtn');
+
+refreshButton.addEventListener('click', () => {
+  print();
+});
+
+window.onload = print();
