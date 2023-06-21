@@ -15,17 +15,17 @@ submit.addEventListener('click', (e) => {
 });
 
 const players = new Board();
-const print = () => {
-  const result = getScore();
-  result.then((res) => {
-    players.data = res.result;
-    const playersScores = document.querySelector('.scores-list');
+const print = async () => {
+  const result = await getScore();
+  players.data = result.result;
+  const playersScores = document.querySelector('.scores-list');
 
-    // sorted the array descending order
-    const sortedScores = players.data.sort((a, b) => b.score - a.score);
+  // sorted the array descending order
+  const sortedScores = players.data.sort((a, b) => b.score - a.score);
 
-    playersScores.innerHTML = sortedScores.map((player) => `<tr><td>${player.user}: ${player.score}</td></tr>`).join('');
-  });
+  playersScores.innerHTML = sortedScores
+    .map((player) => `<tr><td>${player.user}: ${player.score}</td></tr>`)
+    .join('');
 };
 
 const refreshButton = document.getElementById('refBtn');
