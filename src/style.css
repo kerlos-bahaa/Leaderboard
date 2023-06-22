@@ -116,6 +116,7 @@ input {
   background: var(--sec);
   border: 1px solid var(--sec);
   border-radius: 2.5px;
+  margin-bottom: 20px;
 }
 
 input::placeholder {
