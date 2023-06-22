@@ -28,6 +28,7 @@ body {
   font-size: 14px;
   border: 1px solid var(--primary);
   border-radius: 2.5px;
+  margin-left: 30px;
 }
 
 .btn:hover {
@@ -48,7 +49,6 @@ h1 {
   align-items: center;
   font-size: 2.2rem;
   margin-bottom: 40px;
-  padding-left: 191px;
 }
 
 .section {
@@ -68,8 +68,9 @@ h1 {
 
 .container,
 .form {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 0 30px;
 }
 
 .scores {
@@ -138,8 +139,8 @@ button {
 
   .section {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 50px;
     min-width: 780px;
     margin-top: 22px;
@@ -151,11 +152,25 @@ button {
     font-weight: 800;
   }
 
+  .add {
+    margin-left: -30px;
+    margin-top: -75px;
+    font-size: xx-large;
+  }
+
   h3 {
-    font-size: 1.6rem;
+    font-size: xx-large;
   }
 
   .form {
     align-self: start;
+    margin-left: 500px;
+    margin-top: -300px;
+    position: absolute;
+  }
+
+  form {
+    margin-left: -27px;
+    width: 235px;
   }
 }
